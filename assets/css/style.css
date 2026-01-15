@@ -1,0 +1,516 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Papyrus, fantasy;
+    font-weight: 600;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    background-color: #0a0a0a;
+    padding: 0.4rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #111;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.auth-form {
+    max-width: 360px;
+    margin: 6rem auto;
+    padding: 2.5rem;
+    background-color: #0a0a0a;
+    border: 1px solid #111;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: Papyrus, fantasy;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    font-family: Papyrus, fantasy;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.9rem;
+    background: #000;
+    border: 1px solid #222;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    font-family: Papyrus, fantasy;
+    font-weight: 600;
+}
+
+input:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+input::placeholder {
+    color: #444;
+    font-weight: 600;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: none;
+    transition: opacity 0.2s;
+    margin-top: 1rem;
+    font-family: Papyrus, fantasy;
+    font-weight: 700;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+p {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-family: Papyrus, fantasy;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    transition: all 0.2s;
+}
+
+a:hover {
+    border-bottom-color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.music-container {
+    margin-top: 4rem;
+}
+
+.now-playing {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #0a0a0a;
+    border: 1px solid #111;
+}
+
+.song-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.song {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: #0a0a0a;
+    border: 1px solid #111;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.song:hover {
+    background: #111;
+}
+
+.song.playing {
+    border-color: #fff;
+    background: #111;
+}
+
+.song-title {
+    font-weight: 500;
+}
+
+.song-artist {
+    color: #666;
+}
+
+#current-song {
+    color: #fff;
+    font-weight: 500;
+}
+
+.vinyl-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem 2rem;
+    margin: 4rem auto;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.vinyl-item {
+    position: relative;
+    cursor: pointer;
+    width: calc(50% - 1rem);  /* Take up half the space minus gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vinyl-cover {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #111;
+    width: 100%;
+    max-width: 350px;
+}
+
+.vinyl-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.play-overlay i {
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.vinyl-item:hover .play-overlay {
+    opacity: 1;
+}
+
+.vinyl-item:hover img {
+    opacity: 0.7;
+}
+
+.vinyl-info {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.vinyl-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.vinyl-info .artist {
+    color: #666;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.vinyl-info .price {
+    color: #fff;
+    margin-top: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.vinyl-item.playing .play-overlay {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.vinyl-item.playing .play-overlay i {
+    opacity: 0.8;
+}
+
+.vinyl-info h3,
+.vinyl-info .artist,
+.vinyl-info .price,
+.subtitle,
+p,
+h1, h2 {
+    font-family: Papyrus, fantasy;
+}
+
+/* Login/Register pages */
+.auth-form h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.auth-form p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.auth-form a {
+    font-weight: 700;
+}
+
+/* Add these styles for the bouncing dog */
+.bouncing-dog {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+}
+
+.bouncing-dog img {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    border-bottom: none;
+}
+
+.nav-icon:hover {
+    opacity: 0.7;
+    border-bottom: none;
+}
+
+.album-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.btn-buy, .btn-cart {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: Papyrus, fantasy;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.btn-buy {
+    background: #fff;
+    color: #000;
+    flex: 1;
+}
+
+.btn-cart {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    flex: 1;
+}
+
+.btn-buy:hover, .btn-cart:hover {
+    opacity: 0.8;
+}
+
+/* Profile styles */
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #0a0a0a;
+    border: 1px solid #111;
+}
+
+.info-group {
+    margin-bottom: 1.5rem;
+}
+
+.info-group label {
+    display: block;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.info-group p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Cart styles */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #0a0a0a;
+    border: 1px solid #111;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 1.5rem;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.remove-item {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.remove-item:hover {
+    opacity: 0.8;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #0a0a0a;
+    border: 1px solid #111;
+}
+
+.btn-checkout {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3rem;
+    background: #0a0a0a;
+    border: 1px solid #111;
+}
+
+/* Add these styles */
+.cart-summary {
+    background: #0a0a0a;
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid #111;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.summary-row.discount {
+    color: #ff4444;
+}
+
+.summary-row.total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #111;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: block;
+} 
